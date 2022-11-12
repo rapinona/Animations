@@ -6,14 +6,21 @@
 //
 
 import UIKit
+import Lottie
 
 class ViewController: UIViewController {
 
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var loaderView: LoaderView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        loaderView.commonInit(number: segmentedControl.selectedSegmentIndex)
     }
 
-
+    @IBAction func cambioAnim(_ sender: Any) {
+        loaderView.commonInit(number: segmentedControl.selectedSegmentIndex)
+    }
+    
 }
 
